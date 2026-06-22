@@ -19,17 +19,16 @@ The author reserves the right to modify or remove this sketch at any time withou
 */
 
 
-/* ESP32 16-Input & 16-Output Combined Node
+/* ESP32 8-Input & 8-Output Combined Node
    ==============================================================
-   - 16 Output channels with multi-effects (Flash, Strobe, Random, Fire)
-   - 16 Input channels with varying types (Inverted, Pull-up, Toggle) and Delays
+   - 8 Output channels with multi-effects (Flash, Strobe, Random, Fire)
+   - 8 Input channels with varying types (Inverted, Pull-up, Toggle) and Delays
    - CAN Transceiver Pins: RX pin 15, TX pin 2
    ==============================================================
 */
 
 #include "Config.h"         // Contains configuration, see "Config.h"
 #include "ACAN_ESP32Can.h"  // Uses ACan class
-//#include "Boards.h"         // Contains Board definitions
 #include "HouseKeeping.h"   // Development system tools
 #include "mdebugging.h"     // Debugging macros
 #include "processor.h"      // Auto-selects processor and environment configuration
@@ -64,7 +63,7 @@ extern "C" {
           <eventid><name>Event for action</name></eventid>
 
           <int size="1">
-            <name>pin#</name>
+            <name>Choose the pin number you want to use the action on. Note these pins are on the righthand side of the sensor shield.</name>
             <map>
               <relation><property>0</property><value>None</value></relation>
               <relation><property>1</property><value>4</value></relation>
@@ -79,7 +78,7 @@ extern "C" {
           </int>
 
           <int size="1">
-            <name>action</name>
+            <name>Choose the action type you want to use for this pin. Fire uses the next pin for extra effects</name>
             <map>
               <relation><property>0</property><value>None</value></relation>
               <relation><property>1</property><value>Low</value></relation>
@@ -92,39 +91,62 @@ extern "C" {
           </int>
 
           <int size="1">
+<<<<<<< HEAD
+            <name>Parameter 1 On-delay 0=steady-state, 1-255 = from 100ms to 25.5 seconds</name>
+=======
             <name>O = stead state On, 1 gives you 1*100 = 100ms 255 gives you 255*100 = 25.5 second on duration</name>
+>>>>>>> 101e11cf0f733f584f6be34488b585f349e585cb
             <hints><slider tickSpacing='85' immediate='yes' showValue='yes'> </slider></hints>
           </int>
 
           <int size="1">
+<<<<<<< HEAD
+            <name>Parameter 2 Off-delay 0=No repeat, 1-255 = from 100msto 25.5 seconds</name>
+=======
             <name>Off-delay 0 = No repeat, 1 gives you 1*100 = 100ms 255 gives you 255*100 = 25.5 second off duration </name>
+>>>>>>> 101e11cf0f733f584f6be34488b585f349e585cb
             <hints><slider tickSpacing='85' immediate='yes' showValue='yes'> </slider></hints>
           </int>
         </group>
       </group>
 
       <group replication=')" N(NUM_IO) R"('>
-        <name>Inputs </name>
-        <repname>Input </repname>
+        <name>Inputs choose the pin that you wish to use. Note these are on the lefthand side of the sensor shield</name>
+        <repname>Input 13</repname>
+        <repname>Input 12</repname>
+        <repname>Input 14</repname>
+        <repname>Input 27</repname>
+        <repname>Input 26</repname>
+        <repname>Input 25</repname>
+        <repname>Input 33</repname>
+        <repname>Input 32</repname>
         <string size='24'><name>Description</name></string>
         <int size='1'>
-          <name>Channel Type</name>
+          <name>Choose from the 7 Channel Types in the dropdown for how the input works.</name>
           <map>
             <relation><property>0</property><value>None</value></relation> 
             <relation><property>1</property><value>Input</value></relation> 
             <relation><property>2</property><value>Input Inverted</value></relation> 
             <relation><property>3</property><value>Input with pull-up</value></relation>
-            <relation><property>4</property><value>Input with pull-up Inverted</value></relation>
+            <relation><property>4</property><value>Input with pull-up, Inverted</value></relation>
             <relation><property>5</property><value>Toggle</value></relation>
             <relation><property>6</property><value>Toggle with pull-up</value></relation>
           </map>
         </int>
         <int size='1'>
+<<<<<<< HEAD
+          <name>On-delay 0=steady-state, 1-255 = from 100ms to 25.5 seconds</name>
+          <hints><slider tickSpacing='85' immediate='yes' showValue='yes'> </slider></hints>
+        </int>
+        <int size='1'>
+          <name>Off-delay 0=No repeat, 1-255 = from 100msto 25.5 seconds, </name>
+=======
           <name>On-delay 0=steady-state, 1-255 = from 100ms to 25.5seconds,</name>
           <hints><slider tickSpacing='85' immediate='yes' showValue='yes'> </slider></hints>
         </int>
         <int size='1'>
           <name>Off-delay 0=No repeat, 1-255 = From 100ms to 25.5 seconds, </name>
+>>>>>>> 101e11cf0f733f584f6be34488b585f349e585cb
           <hints><slider tickSpacing='85' immediate='yes' showValue='yes'> </slider></hints>
         </int>
         <eventid><name>On-Event</name></eventid>
@@ -246,7 +268,7 @@ uint8_t userState(uint16_t index) {
 // Factory Clear / Init Configuration Reset Space Setup
 void userInitAll() {
   NODECONFIG.put(EEADDR(nodeName), ESTRING("ESP32"));
-  NODECONFIG.put(EEADDR(nodeDesc), ESTRING("16 In / 16 Out"));
+  NODECONFIG.put(EEADDR(nodeDesc), ESTRING("8 In / 8 Out"));
 
   // Reset outputs
   for (int i = 0; i < NUM_ACTION; i++) NODECONFIG.write(EEADDR(action[i].pini), 0);
