@@ -15,7 +15,7 @@ It utilizes CAN bus architecture for robust model railroad layout control or gen
 
 ##  Features
 
-### 8 Output Channels (Pins 4 to 23)
+### 8 Output Channels (Pins 4, 16, 17, 18, 19, 21, 22, 23)
 Supports up to **40 programmable Action Slots** assigned dynamically to physical output pins.
 * **Low / High:** Steady-state on/off control.
 * **Flash:** Alternates high/low with customizable high and low durations (100ms to 25.5s).
@@ -23,7 +23,7 @@ Supports up to **40 programmable Action Slots** assigned dynamically to physical
 * **Random:** High/low organic variance. Perfect for simulating welding arcs or flickering house lighting.
 * **Fire:** Couples consecutive pins using PWM (`analogWrite`) to create realistic embers or flickering building fire effects.
 
-### 8 Input Channels (Pins 13 to 32)
+### 8 Input Channels (Pins 13, 12, 14, 27, 26, 25, 33, 32)
 * **Multiple Channel Types:** Standard Input, Inverted Input, Internal Pull-Up tracking, and Input Toggle state flipping.
 * **On/Off Delay Controls:** Configurable state delays via software sliders (100ms to 25.5s) to filter out track bouncing, sensor noise, or dirty wheels.
 
