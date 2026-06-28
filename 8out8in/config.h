@@ -57,4 +57,4 @@ uint8_t pin[NUM_CHANNEL] = {4, 16, 17, 18, 19, 21, 22, 23};
 #define MANU "OpenLCB"
 #define MODEL "8 In / 8 Out Node"
 #define HWVERSION "1.1"
-#define SWVERSION "1.1"
+#define SWVERSION "1.0.1"
