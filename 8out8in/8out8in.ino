@@ -209,7 +209,7 @@ extern "C" {
   };
 
   // Keep ONLY this single copy of the SNIP hardware identity data!
-  const char SNII_const_data[] PROGMEM = "\001" MANU "\000" MODEL "\000" HWVERSION "\000" OlcbCommonVersion;
+  const char SNII_const_data[] PROGMEM = "\001" MANU "\000" MODEL "\000" HWVERSION "\000" SWVERSION " " OlcbCommonVersion;
 }
 
 
