@@ -1,10 +1,5 @@
 # LCC_8Output40Actions_8Input_Node
 
-Here is the complete, raw Markdown code for your `README.md` file contained inside a single, easy-to-copy block.
-
-You can copy everything inside this block and paste it directly into a file named `README.md` in the root of your GitHub repository:
-
-
 # OpenLCB / LCC 8-Input & 8-Output ESP32 Node
 
 An OpenLCB (LCC) compliant layout automation node built for the **ESP32 DevKit v1**. This project combines high-flexibility lighting effects across 8 output channels with precise input sensor/button debounce and delay tracking across 8 input channels.
