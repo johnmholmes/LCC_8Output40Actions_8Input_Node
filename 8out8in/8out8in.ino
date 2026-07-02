@@ -91,20 +91,20 @@ extern "C" {
           </int>
 
           <int size="1">
-<<<<<<< HEAD
+
             <name>Parameter 1 On-delay 0=steady-state, 1-255 = from 100ms to 25.5 seconds</name>
-=======
+
             <name>O = stead state On, 1 gives you 1*100 = 100ms 255 gives you 255*100 = 25.5 second on duration</name>
->>>>>>> 101e11cf0f733f584f6be34488b585f349e585cb
+
             <hints><slider tickSpacing='85' immediate='yes' showValue='yes'> </slider></hints>
           </int>
 
           <int size="1">
-<<<<<<< HEAD
+
             <name>Parameter 2 Off-delay 0=No repeat, 1-255 = from 100msto 25.5 seconds</name>
-=======
+
             <name>Off-delay 0 = No repeat, 1 gives you 1*100 = 100ms 255 gives you 255*100 = 25.5 second off duration </name>
->>>>>>> 101e11cf0f733f584f6be34488b585f349e585cb
+
             <hints><slider tickSpacing='85' immediate='yes' showValue='yes'> </slider></hints>
           </int>
         </group>
@@ -134,19 +134,14 @@ extern "C" {
           </map>
         </int>
         <int size='1'>
-<<<<<<< HEAD
+
           <name>On-delay 0=steady-state, 1-255 = from 100ms to 25.5 seconds</name>
           <hints><slider tickSpacing='85' immediate='yes' showValue='yes'> </slider></hints>
         </int>
         <int size='1'>
           <name>Off-delay 0=No repeat, 1-255 = from 100msto 25.5 seconds, </name>
-=======
+
           <name>On-delay 0=steady-state, 1-255 = from 100ms to 25.5seconds,</name>
-          <hints><slider tickSpacing='85' immediate='yes' showValue='yes'> </slider></hints>
-        </int>
-        <int size='1'>
-          <name>Off-delay 0=No repeat, 1-255 = From 100ms to 25.5 seconds, </name>
->>>>>>> 101e11cf0f733f584f6be34488b585f349e585cb
           <hints><slider tickSpacing='85' immediate='yes' showValue='yes'> </slider></hints>
         </int>
         <eventid><name>On-Event</name></eventid>
